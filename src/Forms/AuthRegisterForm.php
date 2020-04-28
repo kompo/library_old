@@ -5,8 +5,8 @@ use App\User;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Facades\Auth;
 use Vuravel\Auth\Invitation;
-use Vuravel\Form\Components\{Input, Password, SubmitButton, Link, Columns, Html};
-use Vuravel\Form\Form;
+use Kompo\{Input, Password, SubmitButton, Link, Columns, Html};
+use Kompo\Form;
 
 class AuthRegisterForm extends Form
 {
@@ -26,33 +26,33 @@ class AuthRegisterForm extends Form
 		}
 	}
 
-	public function afterSave($user)
+	public function afterSave()
 	{
 		if(config('auth.registration_by_invitation')){
-			$user->email_verified_at = now();
-			$user->save();
-			$user->assignRole($this->invitation->roles);
+			$this->model->email_verified_at = now();
+			$this->model->save();
+			$this->model->assignRole($this->invitation->roles);
 			$this->invitation->roles->each(function($role){
 				$this->invitation->removeRole($role);
 			});
 			$this->invitation->delete();
 		}
-		event(new Registered($user));
-        Auth::guard()->login($user);
+		event(new Registered($this->model));
+        Auth::guard()->login($this->model);
 	}
 
-	public function components()
+	public function komponents()
 	{
 		return config('auth.registration_by_invitation') ? 
 			(
 				$this->invitation ? 
-					$this->registrationComponents($this->invitation->email) :
+					$this->registrationKomponents($this->invitation->email) :
 					$this->invalidToken()
 			):
-			$this->registrationComponents();
+			$this->registrationKomponents();
 	}
 
-	protected function registrationComponents($prefilledEmail = '')
+	protected function registrationKomponents($prefilledEmail = '')
 	{
 		return [
 			config('auth.user_has_profile') ?

@@ -4,8 +4,8 @@ namespace Vuravel\Partials\Forms;
 use Illuminate\Support\Str;
 use Vuravel\Auth\Events\InvitedToRegister;
 use Vuravel\Auth\Invitation;
-use Vuravel\Form\Components\{Hidden, Input, Select, SubmitButton};
-use Vuravel\Form\Form;
+use Kompo\{Hidden, Input, Select, SubmitButton};
+use Kompo\Form;
 
 class AuthInvitationForm extends Form
 {
@@ -24,7 +24,7 @@ class AuthInvitationForm extends Form
 		return responseInSuccessModal(__('Your invitation has been sent!'));
 	}
 
-	public function components()
+	public function komponents()
 	{
 		return [
 			Hidden::form('token')->value(Str::random(60)),

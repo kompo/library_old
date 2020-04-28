@@ -17,7 +17,7 @@ class ForgotPasswordForm extends \VlForm
         return $this->sendResetLinkEmail($request);
     }
 
-    public function components()
+    public function komponents()
     {
         return [
             Input::form('Email')->name('email'),
@@ -25,7 +25,7 @@ class ForgotPasswordForm extends \VlForm
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return \Auth::guest();
     }

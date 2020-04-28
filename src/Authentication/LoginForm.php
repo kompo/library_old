@@ -18,7 +18,7 @@ class LoginForm extends Form
         return $this->login($request);
     }
 
-    public function components()
+    public function komponents()
     {
         return [
             Input::form('Email')->name('email'),
@@ -35,7 +35,7 @@ class LoginForm extends Form
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return \Auth::guest();
     }

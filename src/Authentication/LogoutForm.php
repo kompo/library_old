@@ -17,14 +17,14 @@ class LogoutForm extends \VlForm
         //session( ['kompo_locale' => $locale] );  //for multi-lang sites
     }
 
-    public function components()
+    public function komponents()
     {
         return [
-            Link::form('Logout')->submitsForm()
+            Link::form('Logout')->submit()
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return \Auth::check();
     }

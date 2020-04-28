@@ -17,6 +17,9 @@ class KompoLibraryServiceProvider extends ServiceProvider
 
         if (file_exists($file = __DIR__.'/helpers.php'))
             require_once $file;
+
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'kompo-library');
+
     }
 
     /**

@@ -22,7 +22,7 @@ class ChangePasswordForm extends \VlForm
         return responseInSuccessModal(__('Password changed successfully!'));
     }
 
-    public function components()
+    public function komponents()
     {
         return [
             Password::form('Old Password')->name('old_password')
@@ -33,7 +33,7 @@ class ChangePasswordForm extends \VlForm
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return \Auth::check();
     }

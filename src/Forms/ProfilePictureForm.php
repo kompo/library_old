@@ -1,15 +1,15 @@
 <?php
 namespace Vuravel\Partials\Forms;
 
-use Vuravel\Form\Form;
-use Vuravel\Form\Components\{Image};
+use Kompo\Form;
+use Kompo\{Image};
 use App\User;
 
 class ProfilePictureForm extends Form
 {
 	public $model = User::class;
 
-	public function components()
+	public function komponents()
 	{
 		return [
 			Image::form(__('Profile picture'))->extraAttributes([

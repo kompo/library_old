@@ -10,7 +10,7 @@ class UserRolesForm extends \VlForm
     public $model = User::class;
     public $class = 'p-4';
 
-    public function components()
+    public function komponents()
     {
         return [
             Title::form($this->record()->name.'\'s roles'),
@@ -19,7 +19,7 @@ class UserRolesForm extends \VlForm
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return auth()->user() && auth()->user()->hasRole('admin|super-admin');
     }

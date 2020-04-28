@@ -8,7 +8,7 @@ class AccountSettingsSidebar extends \VlMenu
 {
     public $fixed = true;
 
-    public function components()
+    public function komponents()
     {
         return [
             Link::form('Change email')->href('account.change-email'),

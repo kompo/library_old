@@ -3,24 +3,20 @@
 namespace Kompo\Library\Permissions;
 
 use App\User;
-use Vuravel\Catalog\Cards\TableRow;
-use Kompo\{Th, Html, EditLink};
+use Kompo\{Table, Th, Html, EditLink};
 
-class UsersRolesPermissionsCatalog extends \VlCatalog
+class UsersRolesPermissionsQuery extends Table
 {
-    public $layout = 'Table';
-    public $card = TableRow::class;
-
     public function query()
     {
         return User::with('roles.permissions');
     }
 
-    public function columns()
+    public function headers()
     {
         return [
-            Th::form('Id')->sortsCatalog('id'),
-            Th::form('Name')->sortsCatalog('name'),
+            Th::form('Id')->sort('id'),
+            Th::form('Name')->sort('name'),
             Th::form('Roles'),
             Th::form('Permissions')
         ];

@@ -3,14 +3,11 @@
 namespace Kompo\Library\Permissions;
 
 use Kompo\Library\Permissions\Permission;
-use Vuravel\Catalog\Cards\TableRow;
-use Kompo\{EditLink, Html, DeleteLink, FlexBetween, Title, AddLink};
+use Kompo\{Table, EditLink, Html, DeleteLink, FlexBetween, Title, AddLink};
 
-class PermissionsCatalog extends \VlCatalog
+class PermissionsQuery extends Table
 {
-    public $layout = 'Table';
-    public $card = TableRow::class;
-    public $columns = ['Name', 'Guard name', 'Delete'];
+    public $headers = ['Name', 'Guard name', 'Delete'];
 
     public function query()
     {

@@ -2,7 +2,7 @@
 namespace Vuravel\Partials\Forms;
 
 use App\User;
-use Vuravel\Form\Form;
+use Kompo\Form;
 use Vuravel\Partials\Forms\{ProfilePictureForm,ProfileCoverForm};
 
 class ProfileUpdateForm extends Form
@@ -19,7 +19,7 @@ class ProfileUpdateForm extends Form
 		return [];
 	}
 
-	public function components()
+	public function komponents()
 	{
 		return array_merge($this->profileFields(), [
 			new ProfilePictureForm(),

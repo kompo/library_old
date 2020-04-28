@@ -2,9 +2,10 @@
 
 namespace Kompo\Library\Account;
 
+use Kompo\Form;
 use Kompo\{Input, SubmitButton};
 
-class ChangeEmailForm extends \VlForm
+class ChangeEmailForm extends Form
 {
     public function handle($request)
     {
@@ -18,7 +19,7 @@ class ChangeEmailForm extends \VlForm
         return redirect()->route('verification.notice');
     }
 
-    public function components()
+    public function komponents()
     {
         return [
             Input::form('Email')->name('email')
@@ -28,7 +29,7 @@ class ChangeEmailForm extends \VlForm
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return \Auth::check();
     }

@@ -18,7 +18,7 @@ class ResetPasswordForm extends \VlForm
         return $this->reset($request);
     }
 
-    public function components()
+    public function komponents()
     {
         return [
             Hidden::form('token')->value($this->parameter('token')),
@@ -29,7 +29,7 @@ class ResetPasswordForm extends \VlForm
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return \Auth::guest();
     }

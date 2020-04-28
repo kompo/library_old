@@ -13,13 +13,13 @@ class RegisterForm extends \VlForm
     protected $redirectTo = 'verification.notice';
     public $model = User::class;
 
-    public function completed($model)
+    public function completed()
     {
-        event(new Registered($model));
-        \Auth::guard()->login($model);
+        event(new Registered($this->model));
+        \Auth::guard()->login($this->model);
     }
 
-    public function components()
+    public function komponents()
     {
         return [
             Input::form('Name')->name('name'),
@@ -36,7 +36,7 @@ class RegisterForm extends \VlForm
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return \Auth::guest();
     }

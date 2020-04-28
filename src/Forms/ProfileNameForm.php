@@ -1,8 +1,9 @@
 <?php
+
 namespace Vuravel\Partials\Forms;
 
-use Vuravel\Form\Form;
-use Vuravel\Form\Components\{Input, Button};
+use Kompo\Form;
+use Kompo\{Input, SubmitButton};
 use App\User;
 
 class ProfileNameForm extends Form
@@ -14,11 +15,11 @@ class ProfileNameForm extends Form
 		$this->recordKey = auth()->user()->getKey();
 	}
 
-	public function components()
+	public function komponents()
 	{
 		return [
-			Input::form(__('Name'))->name('name'),
-			Button::form(__('Save'))->submitsForm()
+			Input::form('Name')->name('name'),
+			SubmitButton::form('Save')
 		];
 	}
 

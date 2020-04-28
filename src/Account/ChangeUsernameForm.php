@@ -27,17 +27,17 @@ class ChangeUsernameForm extends \VlForm
             ]);
     }
 
-    public function components()
+    public function komponents()
     {
         return [
             Input::form('Username')->onInput( function($e){
-                $e->submitsForm('validateUsername')->debounce();
+                $e->submit('validateUsername')->debounce(700);
             }),
             SubmitButton::form('Save')
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return \Auth::check();
     }

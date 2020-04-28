@@ -10,7 +10,7 @@ class PermissionForm extends \VlForm
     public $model = Permission::class;
     public $class = 'p-4';
 
-    public function components()
+    public function komponents()
     {
         return [
             Title::form(($this->creating() ? 'Add a' : 'Edit').' permission'),
@@ -20,7 +20,7 @@ class PermissionForm extends \VlForm
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return auth()->user() && auth()->user()->hasRole('admin|super-admin');
     }

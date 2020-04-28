@@ -1,8 +1,8 @@
 <?php
 namespace Vuravel\Partials\Forms;
 
-use Vuravel\Form\Form;
-use Vuravel\Form\Components\{Input, SubmitButton};
+use Kompo\Form;
+use Kompo\{Input, SubmitButton};
 
 class AuthForgotPasswordForm extends Form
 {
@@ -11,7 +11,7 @@ class AuthForgotPasswordForm extends Form
 
 	protected $submitTo = 'password.email';
 
-	public function components()
+	public function komponents()
 	{
 		return [
 			Input::form('Email')->name('email'),

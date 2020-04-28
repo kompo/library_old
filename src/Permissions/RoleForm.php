@@ -10,7 +10,7 @@ class RoleForm extends \VlForm
     public $model = Role::class;
     public $class = 'p-4';
 
-    public function components()
+    public function komponents()
     {
         return [
             Title::form(($this->creating() ? 'Add a' : 'Edit').' role'),
@@ -21,7 +21,7 @@ class RoleForm extends \VlForm
         ];
     }
 
-    public function authorize()
+    public function authorization()
     {
         return auth()->user() && auth()->user()->hasRole('admin|super-admin');
     }
