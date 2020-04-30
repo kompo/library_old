@@ -26,7 +26,7 @@ class AllAjaxInteractionsForm extends Form
                 ->inModal(),
 
             Button::form('getKomponents')->getKomponents('getKomponents', ['payload' => 'ajax-payload'])
-                ->inModal(),
+                ->inPanel1(),
             Button::form('getKomposer')->getKomposer(AllAjaxInteractionsForm::class, ['payload' => 'ajax-payload'])
                 ->inModal(),
             Button::form('getView')->getView('deleteSelf', ['payload' => 'ajax-payload']),
@@ -43,7 +43,7 @@ class AllAjaxInteractionsForm extends Form
 
     public function getKomponents($payload, KompoFormRequest $request)
     {
-
+        return [];
     }
 
     //public function getKomposer($payload, KompoFormRequest $request)  NOT SUPPOSED TO BE HANDLED WITH METHOD
