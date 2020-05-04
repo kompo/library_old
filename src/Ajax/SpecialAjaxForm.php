@@ -2,7 +2,7 @@
 
 namespace Kompo\Library\Ajax;
 
-use Kompo\{Form, Button, Html, Panel1};
+use Kompo\{Form, Button, Html, Panel2};
 use Kompo\Http\Requests\KompoFormRequest;
 
 class SpecialAjaxForm extends Form
@@ -10,17 +10,21 @@ class SpecialAjaxForm extends Form
     public function komponents()
     {
         return [
-            Button::form('getKomponents')
-                ->getKomponents('getKomponents', ['payload' => 'ajax-payload'])
-                ->inPanel1(),
-            Panel1::form(),
-
             Button::form('getKomposer')
-                ->getKomposer(AllAjaxInteractionsForm::class, ['payload' => 'ajax-payload'])
+                ->getKomposer(SpecialAjaxForm::class, ['payload' => 'ajax-payload'])
                 ->inModal(),
 
             Button::form('getView')
                 ->getView('folder.blade-view', ['payload' => 'ajax-payload'])
+                ->inModal(),
+
+            Button::form('refresh #'.$this->incrementCounter())
+                ->refresh(),
+
+            Button::form('getKomponents')
+                ->getKomponents('getKomponents', ['payload' => 'ajax-payload'])
+                ->inPanel2(),
+            Panel2::form()
         ];
     }
 
@@ -31,5 +35,14 @@ class SpecialAjaxForm extends Form
             Html::form('A back-end Komponent'),
             //... load more Komponents
         ];
+    }
+
+    public function incrementCounter()
+    {
+        $counter = $this->store('counter') ?: 0;
+
+        $this->store(['counter' => $counter + 1]);
+
+        return $this->store('counter');
     }
 }
