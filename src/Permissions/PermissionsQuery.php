@@ -20,7 +20,7 @@ class PermissionsQuery extends Table
             EditLink::form($item->name)
                 ->post('library.permissions.permission', ['id' => $item->id]),
             Html::form($item->guard_name),
-            DeleteLink::form($item)
+            DeleteLink::byKey($item)
         ];
     }
 

@@ -3,7 +3,7 @@
 namespace Kompo\Library\Authentication;
 
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Kompo\{Input, Password, Checkbox, Columns, SubmitButton, Link, Form};
+use Kompo\{Form, Input, Password, Checkbox, Columns, SubmitButton, Link};
 
 class LoginForm extends Form
 {
@@ -35,7 +35,7 @@ class LoginForm extends Form
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return \Auth::guest();
     }

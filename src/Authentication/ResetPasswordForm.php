@@ -2,10 +2,10 @@
 
 namespace Kompo\Library\Authentication;
 
-use Kompo\{Hidden, Input, Password, SubmitButton};
+use Kompo\{Form, Hidden, Input, Password, SubmitButton};
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
-class ResetPasswordForm extends \VlForm
+class ResetPasswordForm extends Form
 {
     use ResetsPasswords;
 
@@ -29,7 +29,7 @@ class ResetPasswordForm extends \VlForm
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return \Auth::guest();
     }

@@ -29,7 +29,7 @@ class ChangeEmailForm extends Form
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return \Auth::check();
     }

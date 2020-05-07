@@ -2,9 +2,9 @@
 
 namespace Kompo\Library\Account;
 
-use Kompo\Link;
+use Kompo\{Menu, Link};
 
-class AccountSettingsSidebar extends \VlMenu
+class AccountSettingsSidebar extends Menu
 {
     public $fixed = true;
 

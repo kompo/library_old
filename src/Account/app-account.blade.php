@@ -1,3 +1,3 @@
 @extends('kompo::app',[
-    'LeftSidebar' => new App\Menus\AccountSettingsSidebar()
+    'LeftSidebar' => new Kompo\Library\Account\AccountSidebar()
 ])

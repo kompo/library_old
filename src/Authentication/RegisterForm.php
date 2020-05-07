@@ -4,9 +4,9 @@ namespace Kompo\Library\Authentication;
 
 use App\User;
 use Illuminate\Auth\Events\Registered;
-use Kompo\{Input, Password, FlexBetween, SubmitButton, Link};
+use Kompo\{Form, Input, Password, FlexBetween, SubmitButton, Link};
 
-class RegisterForm extends \VlForm
+class RegisterForm extends Form
 {
     public $class = 'p-4 mx-auto';
     public $style = 'max-width:350px';
@@ -36,7 +36,7 @@ class RegisterForm extends \VlForm
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return \Auth::guest();
     }

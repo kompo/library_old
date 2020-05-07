@@ -2,9 +2,9 @@
 
 namespace Kompo\Library\Authentication;
 
-use Kompo\Link;
+use Kompo\{Form, Link};
 
-class LogoutForm extends \VlForm
+class LogoutForm extends Form
 {
     protected $redirectTo = '/';
 
@@ -24,7 +24,7 @@ class LogoutForm extends \VlForm
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return \Auth::check();
     }

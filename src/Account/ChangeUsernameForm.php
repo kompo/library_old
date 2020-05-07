@@ -3,10 +3,10 @@
 namespace Kompo\Library\Account;
 
 use App\User;
-use Kompo\{Input, SubmitButton};
+use Kompo\{Form, Input, SubmitButton};
 use Illuminate\Validation\ValidationException;
 
-class ChangeUsernameForm extends \VlForm
+class ChangeUsernameForm extends Form
 {
     public function handle($request)
     {
@@ -37,7 +37,7 @@ class ChangeUsernameForm extends \VlForm
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return \Auth::check();
     }

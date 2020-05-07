@@ -3,9 +3,9 @@
 namespace Kompo\Library\Permissions;
 
 use App\User;
-use Kompo\{Title, Input, MultiSelect, SubmitButton};
+use Kompo\{Form, Title, Input, MultiSelect, SubmitButton};
 
-class UserRolesForm extends \VlForm
+class UserRolesForm extends Form
 {
     public $model = User::class;
     public $class = 'p-4';
@@ -13,13 +13,13 @@ class UserRolesForm extends \VlForm
     public function komponents()
     {
         return [
-            Title::form($this->record()->name.'\'s roles'),
+            Title::form($this->model()->name.'\'s roles'),
             MultiSelect::form('Roles')->optionsFrom('id', 'name'),
             SubmitButton::form('Save')
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return auth()->user() && auth()->user()->hasRole('admin|super-admin');
     }

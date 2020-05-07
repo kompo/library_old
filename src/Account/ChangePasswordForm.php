@@ -2,11 +2,11 @@
 
 namespace Kompo\Library\Account;
 
-use Kompo\{Password, SubmitButton};
+use Kompo\{Form, Password, SubmitButton};
 use Illuminate\Foundation\Auth\ResetsPasswords;
 use Illuminate\Validation\ValidationException;
 
-class ChangePasswordForm extends \VlForm
+class ChangePasswordForm extends Form
 {
     use ResetsPasswords;
 
@@ -33,7 +33,7 @@ class ChangePasswordForm extends \VlForm
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return \Auth::check();
     }

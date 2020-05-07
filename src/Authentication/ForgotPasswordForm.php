@@ -2,10 +2,10 @@
 
 namespace Kompo\Library\Authentication;
 
-use Kompo\{Input, SubmitButton};
+use Kompo\{Form, Input, SubmitButton};
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
 
-class ForgotPasswordForm extends \VlForm
+class ForgotPasswordForm extends Form
 {
     use SendsPasswordResetEmails;
     
@@ -25,7 +25,7 @@ class ForgotPasswordForm extends \VlForm
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return \Auth::guest();
     }

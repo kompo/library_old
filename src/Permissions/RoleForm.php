@@ -3,9 +3,9 @@
 namespace Kompo\Library\Permissions;
 
 use Kompo\Library\Permissions\Role;
-use Kompo\{Title, Input, MultiSelect, SubmitButton};
+use Kompo\{Form, Title, Input, MultiSelect, SubmitButton};
 
-class RoleForm extends \VlForm
+class RoleForm extends Form
 {
     public $model = Role::class;
     public $class = 'p-4';
@@ -13,7 +13,7 @@ class RoleForm extends \VlForm
     public function komponents()
     {
         return [
-            Title::form(($this->creating() ? 'Add a' : 'Edit').' role'),
+            Title::form(($this->modelKey() ? 'Add a' : 'Edit').' role'),
             Input::form('Name'),
             Input::form('Guard')->name('guard_name')->default('web'),
             MultiSelect::form('Permissions')->optionsFrom('id', 'name'),
@@ -21,7 +21,7 @@ class RoleForm extends \VlForm
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return auth()->user() && auth()->user()->hasRole('admin|super-admin');
     }

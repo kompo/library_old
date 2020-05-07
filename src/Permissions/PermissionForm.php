@@ -3,9 +3,9 @@
 namespace Kompo\Library\Permissions;
 
 use Kompo\Library\Permissions\Permission;
-use Kompo\{Title, Input, SubmitButton};
+use Kompo\{Form, Title, Input, SubmitButton};
 
-class PermissionForm extends \VlForm
+class PermissionForm extends Form
 {
     public $model = Permission::class;
     public $class = 'p-4';
@@ -13,14 +13,14 @@ class PermissionForm extends \VlForm
     public function komponents()
     {
         return [
-            Title::form(($this->creating() ? 'Add a' : 'Edit').' permission'),
+            Title::form(($this->modelKey() ? 'Add a' : 'Edit').' permission'),
             Input::form('Name'),
             Input::form('Guard')->name('guard_name')->default('web'),
             SubmitButton::form('Save')
         ];
     }
 
-    public function authorization()
+    public function authorize()
     {
         return auth()->user() && auth()->user()->hasRole('admin|super-admin');
     }

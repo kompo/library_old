@@ -21,7 +21,7 @@ class RolesQuery extends Table
                 ->post('library.permissions.role', ['id' => $item->id]),
             Html::form($item->guard_name),
             Html::form($item->permissions->implode('name', ', ')),
-            DeleteLink::form($item)
+            DeleteLink::byKey($item)
         ];
     }
 
