@@ -1,9 +1,9 @@
 <?php
-namespace Vuravel\Partials\Forms;
+namespace Kompo\Library\Forms;
 
 use App\User;
 use Kompo\Form;
-use Vuravel\Partials\Forms\{ProfilePictureForm,ProfileCoverForm};
+use Kompo\Library\Forms\{ProfilePictureForm,ProfileCoverForm};
 
 class ProfileUpdateForm extends Form
 {

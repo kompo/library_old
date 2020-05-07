@@ -1,5 +1,6 @@
 <?php
-namespace Vuravel\Partials\Forms;
+
+namespace Kompo\Partials\Forms;
 
 use Kompo\Form;
 use Kompo\{Input, SubmitButton};

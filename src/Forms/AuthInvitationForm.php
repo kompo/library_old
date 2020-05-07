@@ -1,5 +1,5 @@
 <?php
-namespace Vuravel\Partials\Forms;
+namespace Kompo\Library\Forms;
 
 use Illuminate\Support\Str;
 use Vuravel\Auth\Events\InvitedToRegister;

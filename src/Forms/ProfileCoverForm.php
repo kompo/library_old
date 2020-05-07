@@ -1,5 +1,5 @@
 <?php
-namespace Vuravel\Partials\Forms;
+namespace Kompo\Library\Forms;
 
 use Kompo\Form;
 use Kompo\{Image, Button};

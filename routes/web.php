@@ -23,7 +23,7 @@ Route::middleware('web')->group(function(){
 
 	Route::middleware(['auth','verified'])->group(function(){
 
-		Route::layout('vuravel-library::app-account')->group(function(){
+		Route::layout('kompo-library::app-account')->group(function(){
 
 			//Route::kompo('invite-form', AuthInvitationForm::class)->name('invite-form');
 
