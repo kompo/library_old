@@ -14,7 +14,7 @@ class ProfilePictureForm extends Form
 		return [
 			Image::form(__('Profile picture'))->extraAttributes([
 				'collection' => 'profile_picture'
-			])->submitsForm()
+			])->submit()
 		];
 	}
 
