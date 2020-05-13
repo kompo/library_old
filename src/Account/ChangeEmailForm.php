@@ -7,10 +7,10 @@ use Kompo\{Input, SubmitButton};
 
 class ChangeEmailForm extends Form
 {
-    public function handle($request)
+    public function handle()
     {
         $user = auth()->user();
-        $user->email = $request->email;
+        $user->email = request('email');
         $user->email_verified_at = null;
         $user->save();
         

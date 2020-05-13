@@ -8,20 +8,20 @@ use Illuminate\Validation\ValidationException;
 
 class ChangeUsernameForm extends Form
 {
-    public function handle($request)
+    public function handle()
     {
-        $this->validateUsername($request);
+        $this->validateUsername(request());
 
         //if successful
-        $user->username = $request->username;
+        $user->username = request('username');
         $user->save();
 
         return responseInSuccessModal(__('Username changed successfully!'));
     }
 
-    public function validateUsername($request)
+    public function validateUsername()
     {
-        if(User::where('username', $request->username)->count())
+        if(User::where('username', request('username'))->count())
             throw ValidationException::withMessages([
                 'username' => __('This username is already taken')
             ]);

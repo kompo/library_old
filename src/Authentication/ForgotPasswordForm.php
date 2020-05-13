@@ -2,8 +2,8 @@
 
 namespace Kompo\Library\Authentication;
 
-use Kompo\{Form, Input, SubmitButton};
 use Illuminate\Foundation\Auth\SendsPasswordResetEmails;
+use Kompo\{Form, Input, SubmitButton};
 
 class ForgotPasswordForm extends Form
 {
@@ -12,9 +12,9 @@ class ForgotPasswordForm extends Form
     public $class = 'p-4 mx-auto';
     public $style = 'max-width:350px';
 
-    public function handle($request)
+    public function handle()
     {
-        return $this->sendResetLinkEmail($request);
+        return $this->sendResetLinkEmail(request());
     }
 
     public function komponents()

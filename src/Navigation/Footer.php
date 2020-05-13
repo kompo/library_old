@@ -7,8 +7,9 @@ use Kompo\Library\Navigation\NewsletterForm;
 
 class Footer extends Menu
 {
-   public $id = 'vl-footer';
-   public $class = 'flex-col';
+   public $id = 'vl-footer'; //For styling
+
+   public $class = 'flex-col'; //To place child komponent in a Column
 
    public $out = true;
 

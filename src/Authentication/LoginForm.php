@@ -13,9 +13,9 @@ class LoginForm extends Form
     public $style = 'max-width:350px';
     protected $redirectTo = '/';
 
-    public function handle($request)
+    public function handle()
     {
-        return $this->login($request);
+        return $this->login(request());
     }
 
     public function komponents()

@@ -13,9 +13,9 @@ class ResetPasswordForm extends Form
     public $style = 'max-width:350px';
     protected $redirectTo = '/';
 
-    public function handle($request)
+    public function handle()
     {
-        return $this->reset($request);
+        return $this->reset(request());
     }
 
     public function komponents()

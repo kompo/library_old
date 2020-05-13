@@ -10,14 +10,14 @@ class ChangePasswordForm extends Form
 {
     use ResetsPasswords;
 
-    public function handle($request)
+    public function handle()
     {
-        if (! \Hash::check($request->old_password, \Auth::user()->password))
+        if (! \Hash::check(request('old_password'), \Auth::user()->password))
             throw ValidationException::withMessages([
                 'old_password' => __('Sorry. The old password you entered does not match our records.')
             ]);
         
-        $this->resetPassword(\Auth::user(), $request->password);
+        $this->resetPassword(\Auth::user(), request('password'));
         
         return responseInSuccessModal(__('Password changed successfully!'));
     }
