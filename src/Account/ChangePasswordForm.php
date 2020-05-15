@@ -19,7 +19,7 @@ class ChangePasswordForm extends Form
         
         $this->resetPassword(\Auth::user(), request('password'));
         
-        return responseInSuccessModal(__('Password changed successfully!'));
+        return __('Password changed successfully!');
     }
 
     public function komponents()
@@ -29,7 +29,7 @@ class ChangePasswordForm extends Form
                 ->comment('You must provide your old password in order to change it.'),
             Password::form('New Password')->name('password'),
             Password::form('Confirm New Password')->name('password_confirmation'),
-            SubmitButton::form('Change Password')
+            SubmitButton::form('Change Password')->inAlert()
         ];
     }
 
