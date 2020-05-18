@@ -14,7 +14,11 @@ class ForgotPasswordForm extends Form
 
     public function handle()
     {
-        return $this->sendResetLinkEmail(request());
+        $response = $this->broker()->sendResetLink(
+            $this->credentials(request())
+        );
+
+        return __($response);
     }
 
     public function komponents()
@@ -22,6 +26,7 @@ class ForgotPasswordForm extends Form
         return [
             Input::form('Email')->name('email'),
             SubmitButton::form('Send password reset instructions')
+                ->inAlert()
         ];
     }
 
