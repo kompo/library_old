@@ -4,7 +4,7 @@ namespace Kompo\Library\Account;
 
 use Kompo\{Menu, Link};
 
-class AccountSettingsSidebar extends Menu
+class AccountSidebar extends Menu
 {
     public $fixed = true;
 
