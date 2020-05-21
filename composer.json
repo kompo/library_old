@@ -1,0 +1,37 @@
+{
+    "name": "kompophp/library",
+    "description": "Kompo prebuilt classes for fast development - Laravel Vue.js",
+    "keywords": [
+        "kompophp",
+        "laravel",
+        "vue.js",
+        "kompo",
+        "components",
+        "library"
+    ],
+    "license": "MIT",
+    "require": {
+    	"php": ">=7.1.0",
+        "kompophp/kompo": "dev-master",
+        "laravel/framework": ">=5.6.0",
+        "spatie/laravel-permission": "^3.11",
+        "appstract/laravel-blade-directives": "^1.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kompo\\Library\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kompo\\Library\\KompoLibraryServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
