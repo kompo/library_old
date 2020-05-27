@@ -11,8 +11,6 @@ class Footer extends Menu
 
    public $class = 'flex-col'; //To place child komponent in a Column
 
-   public $out = true;
-
    public function komponents()
    {
       return [
