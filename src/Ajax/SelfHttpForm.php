@@ -10,22 +10,22 @@ class SelfHttpForm extends Form
     public function komponents()
     {
         return [
-            Button::form('self GET')
+            Button::form('self GET')->class('mb-2')
                 ->selfGet('selfGet', ['payload' => 'ajax-payload'])
                 ->inModal(),
 
-            Button::form('self POST')
+            Button::form('self POST')->class('mb-2')
                 ->selfPost('selfPost', ['payload' => 'ajax-payload'])
                 ->inAlert(),
 
-            Button::form('self PUT')
+            Button::form('self PUT')->class('mb-2')
                 ->selfPut('selfPut', ['payload' => 'ajax-payload'])
                 ->hideSelf(),
                 
-            Button::form('self DELETE')
+            Button::form('self DELETE')->class('mb-2')
                 ->selfDelete('selfDelete', ['payload' => 'ajax-payload'])
                 ->inPanel4(),
-            Panel4::form()
+            Panel4::form()->class('mb-2')
         ];
     }
 

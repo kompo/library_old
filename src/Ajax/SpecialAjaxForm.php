@@ -7,24 +7,26 @@ use Kompo\Http\Requests\KompoFormRequest;
 
 class SpecialAjaxForm extends Form
 {
+    public $class = 'p-4 pb-0';
+
     public function komponents()
     {
         return [
-            Button::form('getKomposer')
+            Button::form('getKomposer')->class('mb-2')
                 ->getKomposer(SpecialAjaxForm::class, ['payload' => 'ajax-payload'])
                 ->inModal(),
 
-            Button::form('getView')
+            Button::form('getView')->class('mb-2')
                 ->getView('folder.blade-view', ['payload' => 'ajax-payload'])
                 ->inModal(),
 
-            Button::form('refresh #'.$this->incrementCounter())
+            Button::form('refresh #'.$this->incrementCounter())->class('mb-2')
                 ->refresh(),
 
-            Button::form('getKomponents')
+            Button::form('getKomponents')->class('mb-2')
                 ->getKomponents('getKomponents', ['payload' => 'ajax-payload'])
                 ->inPanel2(),
-            Panel2::form()
+            Panel2::form()->class('mb-2')
         ];
     }
 
