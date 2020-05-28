@@ -8,7 +8,7 @@ use Kompo\{Input, SubmitButton};
 class AuthForgotPasswordForm extends Form
 {
 	public $class = 'p-4 mx-auto';
-	public $style = 'max-width:350px';
+	public $style = 'max-width:340px';
 
 	protected $submitTo = 'password.email';
 
