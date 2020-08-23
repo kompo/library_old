@@ -27,7 +27,7 @@ class InvitedToRegisterEvent
         $this->invitation = $invitation;
 
         //This needs to be added to boot() of AppServiceProvider
-        //Event::listen(InvitedToRegister::class, SendInvitationRegistrationEmail::class);
+        //Event::listen(InvitedToRegister::class, SendInvitationEmailListener::class);
     }
 
     /**

@@ -14,17 +14,17 @@ class Navbar extends Menu
 	public function komponents()
 	{ 
 	   return [
-	      Logo::form('<b>Kompo</b>')->image('img/kompo-logo.svg'),
+	      Logo::image('img/reno.png'),
 
 	      NavSearch::form('Search the docs...')
 	      	->searchOptions(2, 'searchResults'),
 
 	      CollapseOnMobile::form('☰')->leftMenu(
 
-	         Dropdown::form('Docs')->submenu(
-	            Link::form('Forms')->href('docs/forms'),
-	            Link::form('Queries')->href('docs/queries'),
-	            Link::form('Menus')->href('docs/menus')
+	         Dropdown::form('Shop')->submenu(
+	            Link::form('Appliances')->href('appliances'),
+	            Link::form('Furniture')->href('furniture'),
+	            Link::form('Gardening')->href('gardening')
 	         ),
 
 	         Button::form('Contact us')
@@ -52,19 +52,19 @@ class Navbar extends Menu
 	 *
 	 * @return array
 	 */
-	public function searchResults()
+	public function searchProducts()
     {
         return Post::where('title', 'LIKE', '%'.request('search').'%')->get()
-        	->map(function($post){
+        	->map(function($product){
 
 				return ImageRow::form([
-					'title' => $post->title,
+					'title' => $product->title,
 					'titleClass' => 'text-sm',
-					'image' => asset($post->image['path']),
+					'image' => asset($product->image['path']),
 					'imageWidth'=> '3rem',
 					'imageHeight'=> '3rem',
 					'imageClass' => 'mr-3',
-					'url' => route('post.read', ['id' => $post->id])
+					'url' => route('product-page', ['id' => $product->id])
 				]);
 
             })->all();

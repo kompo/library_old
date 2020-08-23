@@ -1,8 +1,8 @@
 {
-    "name": "kompophp/library",
+    "name": "kompo/library",
     "description": "Kompo prebuilt classes for fast development - Laravel Vue.js",
     "keywords": [
-        "kompophp",
+        "kompo",
         "laravel",
         "vue.js",
         "kompo",
@@ -12,7 +12,7 @@
     "license": "MIT",
     "require": {
     	"php": ">=7.1.0",
-        "kompophp/kompo": "dev-master",
+        "kompo/kompo": "dev-master",
         "laravel/framework": ">=5.6.0",
         "spatie/laravel-permission": "^3.11",
         "appstract/laravel-blade-directives": "^1.9"
