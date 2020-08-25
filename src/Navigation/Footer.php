@@ -21,7 +21,7 @@ class Footer extends Menu
             Link::form('Docs')->href('docs'),
 
             Link::form('Github')->icon('fab fa-github')
-               ->href('https://github.com/kompophp/kompo')->target('_blank'),
+               ->href('https://github.com/kompo/kompo')->target('_blank'),
 
             Link::icon('fab fa-stack-overflow')
                ->href('https://stackoverflow.com/questions/tagged/kompo')->target('_blank'),
