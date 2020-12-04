@@ -8,7 +8,7 @@ Route::middleware(['auth'])->group(function(){
 
         //...
 
-        Route::kompo('account/change-username-form', ChangeUsernameForm::class)
+        Route::get('account/change-username-form', ChangeUsernameForm::class)
             ->name('account.change-username');
 
         //...

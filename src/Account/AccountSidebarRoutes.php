@@ -6,13 +6,13 @@ Route::middleware(['auth'])->group(function(){
 
     Route::layout('app-account')->group(function(){ //Change app-account with your desired template
 
-        Route::kompo('account/change-password-form', ChangePasswordForm::class)
+        Route::get('account/change-password-form', ChangePasswordForm::class)
             ->name('account.change-password');
 
-        Route::kompo('account/change-email-form', ChangeEmailForm::class)
+        Route::get('account/change-email-form', ChangeEmailForm::class)
            ->name('account.change-email');
 
-        Route::kompo('account/change-username-form', ChangeUsernameForm::class)
+        Route::get('account/change-username-form', ChangeUsernameForm::class)
             ->name('account.change-username');
     });
 

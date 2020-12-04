@@ -8,7 +8,7 @@ Route::middleware(['auth'])->group(function(){
 
         //...
 
-        Route::kompo('account/change-password-form', ChangePasswordForm::class)
+        Route::get('account/change-password-form', ChangePasswordForm::class)
             ->name('account.change-password');
 
         //...
